@@ -25,15 +25,6 @@ body {
   color: var(--main-cl);
 }
 
-a {
-  color: var(--company);
-}
-
-a:hover,
-a:focus {
-  color: var(--accent-cl);
-}
-
 /** Header and footer */
 
 header {
@@ -206,17 +197,12 @@ address {
   background-color: var(--white-op10);
 }
 
-.column-2 .page-link:not(:first-child) {
+.column-2 a:not(:first-child) {
   margin-left: 10px;
 }
 
-.page-link .social-icon {
+.column-2 .page-link .social-icon {
   fill: var(--white-op100);
-}
-
-.page-link:hover,
-.page-link:focus {
-  background-color: var(--accent-cl);
 }
 
 /** Index main */
@@ -384,6 +370,7 @@ h2 {
 }
 
 .page-link {
+  display: inline-block;
   height: 44px;
   width: 44px;
   border-radius: 50%;
@@ -391,17 +378,18 @@ h2 {
   padding: 12px;
 }
 
-.page-link .social-icon {
-  fill: currentColor;
+.page-link .social-icon,
+.company-link .company-icon {
+  fill: var(--company);
 }
 
 .page-link:hover,
-.page-link:focus {
+.socials > a:focus .page-link {
   background-color: var(--accent-cl);
 }
 
 .page-link:hover .social-icon,
-.page-link:focus .social-icon {
+.socials > a:focus .social-icon {
   fill: var(--white-op100);
 }
 
@@ -418,12 +406,13 @@ h2 {
 }
 
 .company-link:hover,
-.company-link:focus {
+.clients a:focus .company-link {
   border-color: var(--accent-cl);
 }
 
-.company-link .company-icon {
-  fill: currentColor;
+.company-link:hover .company-icon,
+.clients a:focus .company-icon {
+  fill: var(--accent-cl);
 }
 
 /** Potrfolio main*/
